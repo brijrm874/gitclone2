@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                sh 'docker run --rm brijrm874/rajdemo1:v1'
+                sh 'docker run --name test-runner brijrm874/rajdemo1:v1'
             }
         }
     }
