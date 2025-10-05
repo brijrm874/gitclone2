@@ -1,15 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Pull Image') {
             steps {
-                echo "Building branch: ${env.BRANCH_NAME}"
-                sh 'ls -l'
+                sh 'docker pull brijrm874/rajdemo1:v1'
             }
         }
-        stage('Test') {
+        stage('Run Container') {
             steps {
-                echo "Running tests for ${env.BRANCH_NAME}"
+                sh 'docker run --rm brijrm874/rajdemo1:v1'
             }
         }
     }
